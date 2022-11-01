@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CustomTheme {
   CustomTheme._();
 
-  static const Color _lightScaffoldBackgroundColor = Color(0xFFFCFFB2);
+  static const Color _lightScaffoldBackgroundColor = Color(0xFFf3f5f6);
   static const Color _lightPrimaryColor = Color(0xfff7d101);
   static const Color _lightIconThemeColor = Color(0xff8DABAE);
   static const Color _lightMediumLabelTextColor = Color(0xff000000);

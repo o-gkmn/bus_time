@@ -69,17 +69,12 @@ class _SearchBar extends StatelessWidget {
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderSide:
-              BorderSide(color: Theme.of(context).primaryColor, width: 3),
-          borderRadius: BorderRadius.circular(12.0),
-        ),
-        disabledBorder: OutlineInputBorder(
-          borderSide:
-              BorderSide(color: Theme.of(context).primaryColor, width: 3),
+              BorderSide(color: Theme.of(context).primaryColor, width: 3.0),
           borderRadius: BorderRadius.circular(12.0),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide:
-              BorderSide(color: Theme.of(context).primaryColor, width: 3),
+              BorderSide(color: Theme.of(context).primaryColor, width: 3.0),
           borderRadius: BorderRadius.circular(12.0),
         ),
         labelText: "Ara",
