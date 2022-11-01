@@ -1,3 +1,4 @@
+import 'package:bus_time/route/router.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -81,8 +82,6 @@ class _SearchBar extends StatelessWidget {
               BorderSide(color: Theme.of(context).primaryColor, width: 3),
           borderRadius: BorderRadius.circular(12.0),
         ),
-        hintText: "Otobüs veya durak ismi giriniz",
-        hintStyle: Theme.of(context).textTheme.labelMedium,
         labelText: "Ara",
         labelStyle: Theme.of(context).textTheme.labelMedium,
         prefixIcon: Icon(
@@ -102,8 +101,7 @@ class _BusListButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      //TODO : Otobüs listesi ekranına yönlendirecek
-      onPressed: () {},
+      onPressed: () => Navigator.pushNamed(context, busListRoute),
       child: Column(
         children: [
           Icon(Icons.bus_alert, color: Theme.of(context).iconTheme.color),
