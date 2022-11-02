@@ -14,6 +14,20 @@ final List<String> busses = [
   "19FK",
 ];
 
+final List<String> bussesRoute = [
+  "Fındıklı Mah. - Üsküdar",
+  "Fındıklı Mah. - Kadıköy",
+  "Maltepe - Cevizli Peronlar",
+  "Colton Gardens - Elisabethfurt",
+  "West Antoniettafort - South Shawna",
+  "Pleasanton - Port Melvinachester",
+  "New Tiaraview - North Noe",
+  "Bennettfort - Monahanshire",
+  "Lake Izaiahshire - Jasonhaven",
+  "Lake Leilani - Rowlett",
+];
+
+
 bool isFocused = false;
 
 class BusListScreen extends StatelessWidget {
@@ -91,20 +105,35 @@ class _BusList extends StatelessWidget {
               shrinkWrap: true,
               itemCount: busses.length,
               itemBuilder: ((context, index) {
-                return Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.green),
-                  ),
-                  child: Row(
-                    children: [
-                      Flexible(
-                        child: ListTile(
-                          title: Text(busses[index]),
-                        ),
+                return Card(
+                  child: ClipRect(
+                    child: Container(
+                      height: 60,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.green, width: 2.5),
                       ),
-                    ],
+                      child: Row(
+                        children: [
+                          Container(
+                            alignment: Alignment.center,
+                            width: 60,
+                            height: 60,
+                            decoration: const BoxDecoration(
+                              border: Border(
+                                right:
+                                    BorderSide(color: Colors.green, width: 2.5),
+                              ),
+                            ),
+                            child: Text(busses[index], textAlign: TextAlign.center,),
+                          ),
+                          Expanded(
+                            child: ListTile(
+                              title: Text(bussesRoute[index], style: Theme.of(context).textTheme.labelMedium ,),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 );
               }))
