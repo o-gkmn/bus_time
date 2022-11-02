@@ -27,7 +27,6 @@ final List<String> bussesRoute = [
   "Lake Leilani - Rowlett",
 ];
 
-
 bool isFocused = false;
 
 class BusListScreen extends StatelessWidget {
@@ -105,12 +104,16 @@ class _BusList extends StatelessWidget {
               shrinkWrap: true,
               itemCount: busses.length,
               itemBuilder: ((context, index) {
-                return Card(
+                return Padding(
+                  padding: const EdgeInsets.all(5.0),
                   child: ClipRect(
                     child: Container(
                       height: 60,
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.green, width: 2.5),
+                        borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(30.0),
+                            bottomRight: Radius.circular(30.0)),
                       ),
                       child: Row(
                         children: [
@@ -124,11 +127,17 @@ class _BusList extends StatelessWidget {
                                     BorderSide(color: Colors.green, width: 2.5),
                               ),
                             ),
-                            child: Text(busses[index], textAlign: TextAlign.center,),
+                            child: Text(
+                              busses[index],
+                              textAlign: TextAlign.center,
+                            ),
                           ),
                           Expanded(
                             child: ListTile(
-                              title: Text(bussesRoute[index], style: Theme.of(context).textTheme.labelMedium ,),
+                              title: Text(
+                                bussesRoute[index],
+                                style: Theme.of(context).textTheme.labelMedium,
+                              ),
                             ),
                           ),
                         ],
