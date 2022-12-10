@@ -85,9 +85,7 @@ class _SearchBar extends StatelessWidget {
         ),
       ),
       readOnly: true,
-      onTap: () {
-        //TODO : Arama ekranına yönlendirme kodu yazılacak
-      },
+      onTap: () => Navigator.pushNamed(context, searchRoute),
     );
   }
 }
