@@ -101,54 +101,68 @@ class _BusList extends StatelessWidget {
       child: !isFocused
           ? ListView.builder(
               scrollDirection: Axis.vertical,
-              shrinkWrap: true,
               itemCount: busses.length,
               itemBuilder: ((context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: ClipRect(
-                    child: Container(
-                      height: 60,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.green, width: 2.5),
-                        borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(30.0),
-                            bottomRight: Radius.circular(30.0)),
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            alignment: Alignment.center,
-                            width: 60,
-                            height: 60,
-                            decoration: const BoxDecoration(
-                              border: Border(
-                                right:
-                                    BorderSide(color: Colors.green, width: 2.5),
-                              ),
-                            ),
-                            child: Text(
-                              busses[index],
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          Expanded(
-                            child: ListTile(
-                              title: Text(
-                                bussesRoute[index],
-                                style: Theme.of(context).textTheme.labelMedium,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                return Container(
+                  margin: index == busses.length - 1
+                      ? const EdgeInsets.only(bottom: 0.0)
+                      : const EdgeInsets.only(bottom: 5.0),
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    border: Border.all(color: Colors.green, width: 2.5),
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(30.0),
+                        bottomRight: Radius.circular(30.0)),
                   ),
+                  child: RowContentDesign(
+                      busCode: busses[index], busRoute: bussesRoute[index]),
                 );
-              }))
+              }),
+            )
           : const Center(
               child: Text("Aranıyor..."),
             ),
     );
   }
 }
+
+class RowContentDesign extends StatelessWidget {
+  final String busCode;
+  final String busRoute;
+
+  const RowContentDesign(
+      {super.key, required this.busCode, required this.busRoute});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          alignment: Alignment.center,
+          width: 60,
+          height: 60,
+          decoration: const BoxDecoration(
+            border: Border(
+              right: BorderSide(color: Colors.green, width: 2.5),
+            ),
+          ),
+          child: Text(
+            busCode,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        Expanded(
+          child: ListTile(
+            title: Text(
+              busRoute,
+              style: Theme.of(context).textTheme.labelMedium,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+//TODO busses ve busRoute mock repolar gerçekleriyle değiştirilicek

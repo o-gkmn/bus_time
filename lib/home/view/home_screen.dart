@@ -113,8 +113,7 @@ class _StationListButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      //TODO : Durak listesi ekranına yönlendirecek
-      onPressed: () {},
+      onPressed: () => Navigator.pushNamed(context, stationListRoute),
       child: Column(
         children: [
           Icon(Icons.food_bank,
@@ -132,7 +131,7 @@ class _AnnouncmentButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      //TODO : Durak listesi ekranına yönlendirecek
+      //TODO : Anons listesi ekranına yönlendirecek
       onPressed: () {},
       child: Column(
         children: [

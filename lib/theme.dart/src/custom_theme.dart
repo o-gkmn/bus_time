@@ -15,5 +15,5 @@ class CustomTheme {
       scaffoldBackgroundColor: _lightScaffoldBackgroundColor,
       primaryColor: _lightPrimaryColor,
       iconTheme: const IconThemeData(color: _lightIconThemeColor, size: 25.0),
-      textTheme: const TextTheme(labelMedium: mediumLabelTextStyle));
+      textTheme: const TextTheme(labelMedium: mediumLabelTextStyle, ));
 }
