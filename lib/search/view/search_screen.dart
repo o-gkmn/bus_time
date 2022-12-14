@@ -85,7 +85,7 @@ class _SearchBox extends StatelessWidget {
     if (searchedItem.isNotEmpty) {
       searchedItem.clear();
     }
-    if(query.isEmpty){
+    if (query.isEmpty) {
       isSubmitted = false;
       searchedItem.clear();
     }
@@ -124,17 +124,22 @@ class _SearchingList extends StatelessWidget {
                   );
                 }),
           )
-        : Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Icon(
-                Icons.search,
-                color: Theme.of(context).iconTheme.color,
-                size: 48.0,
-              ),
-              const Text("Aranıyor..."),
-            ],
-          );
+        : Expanded(
+          child: Column(
+              verticalDirection: VerticalDirection.down,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Spacer(flex: 1),
+                Icon(
+                  Icons.search,
+                  color: Theme.of(context).iconTheme.color,
+                  size: 48.0,
+                ),
+                const Text("Aranıyor..."),
+                const Spacer(flex: 1),
+              ],
+            ),
+        );
   }
 }
 

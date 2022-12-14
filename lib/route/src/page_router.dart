@@ -1,4 +1,5 @@
 import 'package:bus_time/bus_list/bus_list.dart';
+import 'package:bus_time/bus_route/bus_route.dart';
 import 'package:bus_time/home/home.dart';
 import 'package:bus_time/search/search.dart';
 import 'package:bus_time/splash/splash.dart';
@@ -18,6 +19,8 @@ class PageRouter {
         return MaterialPageRoute(builder: (_) => const StationListScreen());
       case "/search":
         return MaterialPageRoute(builder: (_) => const SearchScreen());
+      case "/busRoute":
+        return MaterialPageRoute(builder: (_) => const BusRouteScreen());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
